@@ -1,0 +1,78 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+div {
+  background-color: #eee;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  width: 300px;
+}
+div::first-letter {
+  background-color: red;
+  color: white;
+  margin-left: -33px;
+  margin-right: 10px;
+  padding: 15px 10px;
+  position: absolute;
+}
+
+.data-person {
+  background-color: #eee;
+  border-left: 5px solid rgb(214, 60, 99);
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  width: 400px;
+}
+.data-person::before {
+  background-color: #ddd;
+  content: attr(data-person);
+  left: -100px;
+  margin-right: 5px;
+  margin-top: 10px;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 50px;
+}
+
+.data-person::after {
+  border: 15px solid;
+  border-color: transparent rgb(214, 60, 99) transparent transparent;
+  content: "";
+  left: -32px;
+  position: absolute;
+  top: 15px;
+}
+
+.counter {
+  background-color: #eee;
+  padding: 20px;
+  width: 400px;
+  margin: 20px auto;
+  position: relative;
+  counter-increment: number;
+}
+
+.counter::before {
+  background-color: rgb(174, 63, 63);
+  color: white;
+  content: counter(number);
+  left: -45px;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+}
+
+.counter::after {
+  background-color: rgb(174, 63, 63);
+  content: "";
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 5px;
+}
